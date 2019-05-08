@@ -1,0 +1,58 @@
+{% load bootstrap3 %}
+{% load static%}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  {% if title %}
+  <title>Gallery - {{title}}</title>
+  {% else %}
+    <title> Photo Gallery </title>
+  {% endif %}
+
+  {% block styles %}
+    {% bootstrap_css %}
+    <link rel="stylesheet" href="{% static 'css/basenews.css' %}">
+  {% endblock %}
+
+</head>
+<body>
+    {% include "navbar.html" %}
+
+    {% block content %} 
+
+    <div>
+        <section class="jumbotron text-center">
+            <div class="container">
+              <h1 class="jumbotron-heading">Photo Gallery</h1>
+              <p class="lead text-muted">This gallery is a collection of some of the work we have done in the past. Please get in touch if there is a category you would like to have added and we will inlcude in our next updates.</p>
+              <p>
+                <a href="#" class="btn btn-primary my-2">Nature</a>
+                <a href="#" class="btn btn-primary my-2">Entertainment</a>
+                <a href="#" class="btn btn-primary my-2">Technology</a>
+                <a href="#" class="btn btn-primary my-2">Sports</a>
+                <a href="#" class="btn btn-primary my-2">All photos</a>
+              </p>
+            </div>
+          </section>
+    </div>
+
+    <div class="container">
+
+    <div class="card" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+
+    </div>
+    {%endblock%}
+
+    {% block scripts %}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+     {% bootstrap_javascript %}
+    {% endblock %}
+</body>
+</html>
