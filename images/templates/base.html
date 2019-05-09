@@ -1,5 +1,5 @@
-{% load bootstrap3 %}
-{% load static%}
+{% load bootstrap4 %}
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,8 +13,13 @@
 
   {% block styles %}
     {% bootstrap_css %}
-    <link rel="stylesheet" href="{% static 'css/basenews.css' %}">
+    <link rel="stylesheet" href="{%static 'css/basenews.css'%}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="{%static 'css/style.css'%}"> -->
+    <!-- <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet"> -->
+
   {% endblock %}
+
 
 </head>
 <body>
@@ -22,37 +27,14 @@
 
     {% block content %} 
 
-    <div>
-        <section class="jumbotron text-center">
-            <div class="container">
-              <h1 class="jumbotron-heading">Photo Gallery</h1>
-              <p class="lead text-muted">This gallery is a collection of some of the work we have done in the past. Please get in touch if there is a category you would like to have added and we will inlcude in our next updates.</p>
-              <p>
-                <a href="#" class="btn btn-primary my-2">Nature</a>
-                <a href="#" class="btn btn-primary my-2">Entertainment</a>
-                <a href="#" class="btn btn-primary my-2">Technology</a>
-                <a href="#" class="btn btn-primary my-2">Sports</a>
-                <a href="#" class="btn btn-primary my-2">All photos</a>
-              </p>
-            </div>
-          </section>
-    </div>
 
-    <div class="container">
-
-    <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-      </div>
-
-    </div>
     {%endblock%}
-
+    {% include 'footer.html' %}
     {% block scripts %}
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-     {% bootstrap_javascript %}
-    {% endblock %}
+    {% bootstrap_javascript %}
+    {% load static %}    
+    {% endblock scripts %}
+
+   
 </body>
 </html>
