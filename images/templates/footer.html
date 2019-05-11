@@ -1,24 +1,19 @@
 <footer class="container py-5">
         <div class="row">
-          <div class="col-12 col-md">
-              <div class="container text-center">
-                  <p> © Gabriel Oduori {% now "Y" %}</p>
-                  </div>
-          </div>
           <div class="col-6 col-md">
             <h5>Categories</h5>
             <ul class="list-unstyled text-small" style="text-align:center;">
-              <li><a class="text-muted" href="#">Nature</a></li>
-              <li><a class="text-muted" href="#">Entertainment</a></li>
-              <li><a class="text-muted" href="#">Technology</a></li>
-              <li><a class="text-muted" href="#">Sports</a></li>
-              <li><a class="text-muted" href="#">All Photos</a></li>
+              <li><a class="text-muted" href="{% url 'nature'%}">Nature</a></li>
+              <li><a class="text-muted" href="{% url 'entertainment'%}">Entertainment</a></li>
+              <li><a class="text-muted" href="{% url 'technology'%}">Technology</a></li>
+              <li><a class="text-muted" href="{% url 'sports'%}">Sports</a></li>
+              <li><a class="text-muted" href="{% url 'gallery'%}">All Photos</a></li>
             </ul>
           </div>
           <div class="col-6 col-md">
             <h5>Contacts</h5>
             <ul class="list-unstyled text-small" style="text-align:center;">
-              <li><a class="text-muted" href="#">Email</a></li>
+              <li><a class="text-muted" href="mailto:gabriel.oduori@gmail.com"">Email</a></li>
               <li><a class="text-muted" href="#">Phone</a></li>
               <li><a class="text-muted" href="#">Skype</a></li>
 
@@ -34,4 +29,9 @@
             </ul>
           </div>
         </div>
+        <div class="col-14 col-md">
+          <div class="container text-center">
+              <p style="font-size:small"> © Gabriel Oduori {% now "Y" %}</p>
+              </div>
+      </div>
       </footer>
