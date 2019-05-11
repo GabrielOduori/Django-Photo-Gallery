@@ -9,7 +9,7 @@ from .models import Image, Location, Category
 
 class ImageAdmin(admin.ModelAdmin):
     list_display = ['name','category','location','pub_date']
-    ordering = ['pub_date']
+    ordering = ['-pub_date']
     
     
 class LocationAdmin(admin.ModelAdmin):
