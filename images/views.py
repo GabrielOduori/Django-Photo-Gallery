@@ -1,31 +1,76 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse, Http404
 import datetime as dt
-from .models import Image
+from .models import Image, Category, Location
 
 # Create your views here.
 def index(request):
-    return render(request,'index.html')
-
+    '''
+    Index function loads the start up page with a filter of randon six images at the beginning
+    '''
+    gallery = Image.objects.all()[:6]
+    return render(request,'index.html', {'gallery':gallery})
 
 
 def gallery(requst):
-    
-    gallery = Image.objects
+    '''
+    gallery function returns the list of photos in the database
+    '''
+    gallery = Image.objects.all()
     return render(requst, 'gallery/gallery.html', {'gallery':gallery})
 
+def single_image_details(request,image_id):
+    '''
+    Function that returns details of a single image. This will be in a modal views
+    '''
+    image_detail = get_object_or_404(Image, pk=image_id)
+    return render(request,'gallery/details.html', {'image_detail':image_detail})
 
 
 def about_us(request):
+    '''
+    Function that returns information abous us
+    '''
     return render(request, 'about/about.html')
 
 
 
 def blog(request):
+    '''
+    This is a function we can use in future to add a blog onto the application
+    '''
     pass
 
 
-def single_image_view(request,id):
-    pass
+
+def search_images(request):
+    if 'image' in request.GET and request.GET["image"]:
+        search_text  =  request.GET.get("image")
+        searched_images  =  Image.search_by_title(search_text)
+        message  = f"{search_text}"
+        
+        return render(request, 'search.html', {"message":message, "images":searched_images})
+    else:
+        message = "You have not searched for any image"
+        
+        return render(request, 'search.html', {"message":message})
 
 
+def sports(request):
+    sports = Image.objects.filter(category__name='sports')
+    return render(request,'category/sports/sports.html', {'sports':sports})
+
+
+def nature(request):
+    nature = Image.objects.filter(category__name='nature')
+    return render(request,'category/nature/nature.html', {'nature':nature})
+
+
+def entertainment(request):
+    entertainment = Image.objects.filter(category__name='entertainment')
+    return render(request,'category/entertainment/entertainment.html', {'entertainment':entertainment})
+
+
+def technology(request):
+    tech = Image.objects.filter(category__name='technology')
+    return render(request,'category/technology/technology.html', {'tech':tech})
