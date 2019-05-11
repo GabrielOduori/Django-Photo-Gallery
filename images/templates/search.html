@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="container">
+
+
+    <br>
+    <br>
+        <div class="row">
+          {% if gallery %}
+            <h2>Found {{ images|length }} of searched term {{message}}</h2>
+          {% else %}
+            <h2> Found 0 articles for the search term {{message}}</h2>
+          {% endif %}
+      
+        </div>
+      
+        <div class="row">
+      
+        {% if gallery %}
+          {% for image in gallery %}
+            <div class="col-sm-6 col-md-3">
+                <h1>{{image.name}}</h1>
+            </div>
+          {% endfor %}
+        {% endif %}
+        </div>
+      </div>
+
+{% endblock %}
