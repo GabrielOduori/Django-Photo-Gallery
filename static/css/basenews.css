@@ -1,0 +1,43 @@
+@import url(https://fonts.googleapis.com/css?family=Dosis|Indie+Flower);
+
+body{
+    font-family: Indie+Flower;
+}
+
+
+
+h1{
+    color:violet;
+    font-family: 'Indie Flower', cursive;
+    font-size: 80;
+}
+
+.jumbotron, .album{
+
+    font-family: 'Indie Flower', cursive;
+}
+
+.navbar, .album, .jumbotron{
+    font-family: 'Dosis', sans-serif;
+}
+
+
+h5{
+    text-align:center;
+}
+
+
+text-muted{
+    "text-align:center;
+}
+
+
+.card-img-top {
+    /*height: 11vw;*/
+    max-height:100px;
+
+
+}
+
+
+
