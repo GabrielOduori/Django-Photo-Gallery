@@ -1,0 +1,1 @@
+web: gunicorn django-photo-gallery.wsgi --log-file -
