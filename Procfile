@@ -1,1 +1,1 @@
-web: gunicorn django-photo-gallery.wsgi --log-file -
+web: gunicorn gallery.wsgi --log-file -
