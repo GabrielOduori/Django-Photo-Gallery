@@ -1,9 +1,10 @@
 # Project Title
 
 Django Photo Gallery
+
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+## SetUp / Installation Requirements
 
 ### Prerequisites
 
@@ -12,60 +13,41 @@ These instructions will get you a copy of the project up and running on your loc
 * Virtualenv
 ```
 
-### Installing
+### Cloning
 
-A step by step series of examples that tell you how to get a development env running
+* In your terminal:
+        
+        $ git clone https://github.com/GabrielOduori/Django-Photo-Gallery
+        $ cd Django-Photo-Gallery
 
-Say what the step will be
 
-```
-Give the example
-```
+## Running the Application
+* Creating the virtual environment
 
-And repeat
+        $ python3 -m pip install --user virtualenv ( on a Mac)
+        $ python3 -m virtualenv env
+        $ source env/bin/activate
+        $(For other operating systems, see https://packaging.python.org/guides/installing-using-pip-and-virtualenv/)
 
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
+* To run the tests for the class files:
+
+        $ python3.6 manage.py tests image
+
 
 ### Break down into end to end tests
 
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
 ## Deployment
 
-For deployment, follow instructions here (https://gist.github.com/newtonkiragu/42f2500e56d9c2375a087233587eddd0)
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+For deployment to heroku,please follow instructions here (https://gist.github.com/newtonkiragu/42f2500e56d9c2375a087233587eddd0)
 
 
 ## Authors
 
 * **Gabriel Oduori** 
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
 ## License
 
