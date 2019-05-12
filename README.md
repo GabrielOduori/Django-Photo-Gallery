@@ -11,7 +11,7 @@ Django Photo Gallery
 * python3.7
 * Django 1.11
 * Virtualenv
-```
+
 
 ### Cloning
 
