@@ -37,8 +37,6 @@ Django Photo Gallery
         $ python3.6 manage.py tests image
 
 
-### Break down into end to end tests
-
 ## Deployment
 
 For deployment to heroku,please follow instructions here (https://gist.github.com/newtonkiragu/42f2500e56d9c2375a087233587eddd0)
