@@ -5,13 +5,12 @@
 <div class="container">
 
 
-    <br>
-    <br>
+  
         <div class="row">
           {% if gallery %}
-            <h2>Found {{ images|length }} of searched term {{message}}</h2>
+            <h2>Found {{ images|length }} of searched category {{message}}</h2>
           {% else %}
-            <h2> Found 0 articles for the search term {{message}}</h2>
+            <h2> Found 0 categories of the search term {{message}}</h2>
           {% endif %}
       
         </div>
@@ -22,6 +21,7 @@
           {% for image in gallery %}
             <div class="col-sm-6 col-md-3">
                 <h1>{{image.name}}</h1>
+                <img src="{{image.photo.url}}">
             </div>
           {% endfor %}
         {% endif %}
