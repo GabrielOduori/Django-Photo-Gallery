@@ -72,7 +72,6 @@ class Image(models.Model):
     def update_image(self):
         pass
         
-    
 
     def get_image_by_id(id):
         pass
