@@ -40,13 +40,23 @@
       <div class="modal-body">Location:{{image.location}}</div>
       <div class="modal-footer">
 
-        <button type="button" class="btn btn-primary">Copy Link</button>
+        <button type="button" class="btn btn-info" value="{{ image.photo.url }}" onclick="copyURL(this.value)">Copy Link</button>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
 </div>
-
+<script>
+function copyURL(value){
+  function handler(event){
+    event.clipboardData.setData('text/plain',value);
+    event.preventDefault();
+    document.removeEventListener('copy',handler, true);
+  }
+  document.addEventListener('copy', handler, true);
+  document.execCommand('copy');
+}
+</script>
           {% empty %}
           <h3>The gallery is still empty!</h3>
 
