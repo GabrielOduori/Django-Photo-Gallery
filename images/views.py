@@ -44,14 +44,14 @@ def blog(request):
 
 
 def search_images(request):
-    if 'image' in request.GET and request.GET["image"]:
-        search_text  =  request.GET.get("image")
-        searched_images  =  Image.search_by_title(search_text)
+    if 'category' in request.GET and request.GET["category"]:
+        search_text  =  (request.GET.get("category")).title()
+        searched_images = Image.search_by_category(search_text)
         message  = f"{search_text}"
         
         return render(request, 'search.html', {"message":message, "images":searched_images})
     else:
-        message = "You have not searched for any image"
+        message = "You have not searched for any category"
         
         return render(request, 'search.html', {"message":message})
 
