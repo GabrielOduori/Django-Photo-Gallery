@@ -14,7 +14,6 @@ urlpatterns =[
     url(r'^category/technology/$', views.technology, name = 'technology'),
     url(r'^category/nature/$', views.nature, name = 'nature'),
     url(r'^category/entertainment/$', views.entertainment, name = 'entertainment'),
-    url(r'^admin/', admin.site.urls), name="admin",
 
 ]
 if settings.DEBUG:
