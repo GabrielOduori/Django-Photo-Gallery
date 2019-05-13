@@ -12,12 +12,12 @@ def index(request):
     return render(request,'index.html', {'gallery':gallery})
 
 
-def gallery(requst):
+def gallery(request):
     '''
     gallery function returns the list of photos in the database
     '''
     gallery = Image.objects.all()
-    return render(requst, 'gallery/gallery.html', {'gallery':gallery})
+    return render(request, 'gallery/gallery.html', {'gallery':gallery})
 
 def single_image_details(request,image_id):
     '''
