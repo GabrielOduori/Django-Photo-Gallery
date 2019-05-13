@@ -7,14 +7,14 @@
             <div class="col-md-4">
               <div class="card mb-4 shadow-sm" style="width:20rem;height:23rem;">
                 <div class="card-header">{{image.name}}</div>
-                <div class="card-body">                    <img class="card-img-top"src = "{{ image.photo.url }}" data-toggle="modal" data-target="#{{image.image_id}}" style="height:150px;"/>
+                <div class="card-body">                    <img class="card-img-top"src = "{{ image.photo.url }}" data-toggle="modal" data-target="#{{image.name}}" style="height:150px;"/>
 
                   
                     <br>
                   <p class="card-text">{{image.summary}}</p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#{{image.id}}">View</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#{{image.name}}">View</button>
                     </div>
                     <small class="text-muted">Posted : {{image.pub_date|timesince}}</small>
                   </div>
@@ -23,18 +23,15 @@
           </div>
 
           <!-- Modal -->
-<div class="modal fade" id="{{image.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollable" aria-hidden="true">
+<div class="modal fade" id="{{image.name}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollable" aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="#{{image.id}}">{{image.name}}</h5>
+        <h5 class="modal-title" id="#{{image.name}}">{{image.name}}</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-
-      <img src="{{image.photo.url}}">
-      <div class="modal-body">{{image.description}}</div>
       <div class="modal-body">{{image.description}}</div>
       <div class="modal-body">{{image.category}}</div>
       <div class="modal-body">{{image.location}}</div>
