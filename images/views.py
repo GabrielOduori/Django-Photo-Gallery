@@ -70,7 +70,6 @@ def entertainment(request):
     entertainment = Image.objects.filter(category__name='entertainment')
     return render(request,'category/entertainment/entertainment.html', {'entertainment':entertainment})
 
-
 def technology(request):
     tech = Image.objects.filter(category__name='technology')
     return render(request,'category/technology/technology.html', {'tech':tech})
