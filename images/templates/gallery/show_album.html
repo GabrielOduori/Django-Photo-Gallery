@@ -7,8 +7,7 @@
             <div class="col-md-4">
               <div class="card mb-4 shadow-sm" style="width:20rem;height:23rem;">
                 <div class="card-header">{{image.name}}</div>
-                <div class="card-body">
-                    <img class="card-img-top"src = "{{ image.photo.url }}" data-toggle="modal" data-target="#{{image.name}}" style="height:150px;"/>
+                <div class="card-body">                    <img class="card-img-top"src = "{{ image.photo.url }}" data-toggle="modal" data-target="#{{image.name}}" style="height:150px;"/>
 
                   
                     <br>
@@ -22,14 +21,9 @@
                 </div>
               </div>    
           </div>
-          {% empty %}
-          <h3>The gallery is still empty!</h3>
-        {% endfor %}
-</div>
 
-
-<!-- Modal -->
-<div class="modal fade" id="#{{image.name}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollable" aria-hidden="true">
+          <!-- Modal -->
+<div class="modal fade" id="{{image.name}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollable" aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -49,4 +43,15 @@
     </div>
   </div>
 </div>
+
+          {% empty %}
+          <h3>The gallery is still empty!</h3>
+
+          
+        {% endfor %}
+
+
+</div>
+
+
 
