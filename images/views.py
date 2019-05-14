@@ -45,9 +45,9 @@ def blog(request):
 
 def search_images(request):
     if 'category' in request.GET and request.GET["category"]:
-        search_text  =  (request.GET.get("category")).name()
-        searched_images = Image.search_by_category(search_text)
-        message  = f"{search_text}"
+        search_term  =  (request.GET.get("category")).title()
+        searched_images = Image.search_by_category(search_term)
+        message  = f"{search_term}"
         
         return render(request, 'search.html', {"message":message, "images":searched_images})
     else:
