@@ -10,10 +10,9 @@
 <div class="album">
     <div class="container">
       <div class="row">
-    {% for image in sports %}
-    {% include 'category_detail.html'%}
-    {% include 'modal.html' %}
-    {% endfor %}
+      {% for image in sports %}
+      {% include 'category_detail.html'%}
+      {% include 'modal.html' %}
         {% empty %}
         <h3>There are currently no images under this category</h3>
         {% endfor %}
