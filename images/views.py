@@ -57,7 +57,7 @@ def search_category(request):
 
 
 def sports(request):
-    sports = Image.objects.filter(category='sports')
+    sports = Image.objects.all().filter(category__name='sports')
     return render(request,'category/sports/sports.html', {'sports':sports})
 
 
