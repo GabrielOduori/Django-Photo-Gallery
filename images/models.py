@@ -73,8 +73,9 @@ class Image(models.Model):
         pass
         
 
-    def get_image_by_id(id):
-        pass
+    def get_image_by_id(cls):
+        images = cls.objects.get(pk=id)
+        return images
     
     def search_image(category):
         pass

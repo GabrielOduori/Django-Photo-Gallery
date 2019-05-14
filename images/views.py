@@ -73,3 +73,11 @@ def entertainment(request):
 def technology(request):
     tech = Image.objects.filter(category__name='technology')
     return render(request,'category/technology/technology.html', {'tech':tech})
+
+
+# def image(request,image_id):
+#     try:
+#         image = Image.objects.get(id=image_id)
+#     except: DoesNotExist
+#         raise Http404
+#     return render(request, 'image.html',{"image":image})
