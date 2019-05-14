@@ -57,12 +57,12 @@ def search_category(request):
 
 
 def sports(request):
-    sports = Image.objects.filter(category__name='sports')
+    sports = Image.objects.filter(category='sports')
     return render(request,'category/sports/sports.html', {'sports':sports})
 
 
 def nature(request):
-    nature = Image.objects.filter(category__name='nature')
+    nature = Image.objects.filter(category='nature')
     return render(request,'category/nature/nature.html', {'nature':nature})
 
 
