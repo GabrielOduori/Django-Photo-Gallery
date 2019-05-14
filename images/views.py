@@ -57,7 +57,8 @@ def search_category(request):
 
 
 def sports(request):
-    sports = Image.objects.all().filter(category__name='sports')
+    sports_category = Category.objects.get(pk=1)
+    sports = Image.objects.all().filter(category=sports_category)
     return render(request,'category/sports/sports.html', {'sports':sports})
 
 
@@ -68,11 +69,13 @@ def nature(request):
 
 
 def entertainment(request):
-    entertainment = Image.objects.filter(category__name='entertainment')
+    ente_category = Category.objects.get(pk=5)
+    entertainment = Image.objects.filter(category=ente_category)
     return render(request,'category/entertainment/entertainment.html', {'entertainment':entertainment})
 
 def technology(request):
-    tech = Image.objects.filter(category__name='technology')
+    tech_category = Category.objects.get(pk=3)
+    tech = Image.objects.filter(category=tech_category)
     return render(request,'category/technology/technology.html', {'tech':tech})
 
 
