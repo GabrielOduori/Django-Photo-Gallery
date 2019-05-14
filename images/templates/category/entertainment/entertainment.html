@@ -5,32 +5,13 @@
 <br>
 <br>
 
-<h2>Entertainment</h2>
+
 <div class="album">
     <div class="container">
-      <div class="row">
-    {% for image in entertainment %}
-      
-        <div class="col-md-4">
-          <div class="card mb-4 shadow-sm" style="width:20rem;height:23rem;">
-            <div class="card-header">{{image.name}}</div>
-            <div class="card-body">
-
-                <img class="card-img-top"src = "{{ image.photo.url }}" data-toggle="modal" data-target="#myModal{{image.id}}" style="height:150px;"/>
-                <br>
-                
-              <p class="card-text">{{image.summary}}</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#myModal{{image.id}}">View</button>
-                </div>
-                <small class="text-muted">{{image.pub_date}}</small>
-              </div>
-              
-            </div>
-          </div>
-          
-        </div>
+        <h2>Entertainment</h2>
+        <div class="row">
+        {% for image in entertainment %}
+        {% include 'category_detail.html'%}
         {% include 'modal.html' %}
         {% endfor %}
       </div>
