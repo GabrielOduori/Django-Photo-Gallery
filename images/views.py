@@ -62,7 +62,7 @@ def sports(request):
 
 
 def nature(request):
-    nature_category = Category.objects.get(name = 'nature')
+    nature_category = Category.objects.get(pk=2)
     nature = Image.objects.filter(category=nature_category)
     return render(request,'category/nature/nature.html', {'nature':nature})
 
