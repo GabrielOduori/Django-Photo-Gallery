@@ -40,7 +40,7 @@
       <div class="modal-body">Location:{{image.location}}</div>
       <div class="modal-footer">
 
-        <button type="button" class="btn btn-info" value="{{ image.photo.url }}" onclick="copyURL(this.value)">Copy URL</button>
+        <button type="button" class="btn btn-info" value="https://django-photo-gallery.herokuapp.com/{{ image.photo.url }}" onclick="copyURL(this.value)">Copy URL</button>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
